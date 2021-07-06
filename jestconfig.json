@@ -1,0 +1,22 @@
+{
+  "coverageDirectory": "../coverage",
+  "rootDir": ".",
+  "roots": [
+    "<rootDir>"
+  ],
+  "transform": {
+    "^.+\\.(t|j)sx?$": "ts-jest"
+  },
+  "testRegex": ".(test|spec)\\.(jsx?|tsx?)$",
+  "moduleFileExtensions": [
+    "ts",
+    "tsx",
+    "js",
+    "jsx",
+    "json",
+    "node"
+  ],
+  "moduleNameMapper": {
+    "src/(.*)$": "<rootDir>/src/$1"
+  }
+}

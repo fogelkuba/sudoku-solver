@@ -1,0 +1,35 @@
+{
+  "name": "sudoku-solver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "tsc",
+    "coverage": "jest --config jestconfig.json --coverage",
+    "lint": "ts lint --project \"./tsconfig.json\"",
+    "test": "jest --config jestconfig.json",
+    "watch-test": "jest --config jestconfig.json --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fogelkuba/sudoku-solver.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fogelkuba/sudoku-solver/issues"
+  },
+  "homepage": "https://github.com/fogelkuba/sudoku-solver#readme",
+  "devDependencies": {
+    "@types/jest": "^26.0.23",
+    "eslint": "^7.30.0",
+    "jest": "^27.0.6",
+    "ts-jest": "^27.0.3",
+    "ts-lint": "^4.5.1",
+    "typescript": "^4.3.5"
+  },
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib/**/*"
+  ]
+}
