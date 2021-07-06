@@ -1,10 +1,7 @@
-import { SolvableDriver } from "..";
 import { AbstractDriver } from "./abstract";
+import { SolvableDriver } from "../contracts";
 
 export class ClassicDriver extends AbstractDriver implements SolvableDriver {
-    // constructor (toSolve: string) {
-    //     this.toSolve = toSolve
-    // }
     /**
      * Return resolved sudoku as a string.
      */
