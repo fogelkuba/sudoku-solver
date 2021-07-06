@@ -1,11 +1,12 @@
-export interface ISolver {}
-
-export enum SolvableType {
-    Classic = 'classic'
+export interface ISolver {
+    // trim(toTrim: string): string
 }
 
 export interface SolvableDriver {
     resolve(): string
     validate(): boolean
-    trim(toTrim: string): string
+}
+
+export enum SolvableType {
+    Classic = 'classic'
 }

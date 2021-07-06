@@ -1,24 +1,28 @@
-import { ISolver, SolvableType } from "./contracts";
+import { ISolver, SolvableDriver, SolvableType } from "./contracts";
+import { driversMap } from "./drivers/drivers-map";
 
 export class Solver implements ISolver {
     constructor (
         toSolve: string,
         public type: SolvableType = SolvableType.Classic
-        ) {
-        this.toSolve = this.trim(toSolve)
+    ) {
+        const trimmed = Solver.trim(toSolve)
+        const driver = this.getDriver(type)
+        this.driver = new driver(trimmed)
     }
 
-    /**
-     * String representation of sudoku to solve.
-     */
-    public toSolve: string
+    private driver!: SolvableDriver
+
+    private getDriver(type: SolvableType): any {
+        return driversMap[type]
+    }
 
 
     /**
      * Removes white characters from input string
      * @param toTrim
      */
-    private trim (toTrim: string): string {
+    private static trim (toTrim: string): string {
         return toTrim.replace(/\s/g, '')
     }
 }
