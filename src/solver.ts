@@ -11,7 +11,7 @@ export class Solver implements ISolver {
 
     /**
      * Driver set for particular sudoku type.
-     */
+   §  */
     private driver!: SolvableDriver
 
     /**

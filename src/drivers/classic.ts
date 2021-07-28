@@ -22,6 +22,17 @@ export class ClassicDriver implements SolvableDriver {
             return false
         }
 
+        if (this.hasConflicts(toSolve)) {
+            return false
+        }
+
         return true
+    }
+
+    /**
+     * Check for potential conflicts in given sudoku
+     */
+    private hasConflicts(toSolve: string) {
+        return false
     }
 }

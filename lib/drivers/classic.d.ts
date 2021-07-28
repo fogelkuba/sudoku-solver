@@ -10,4 +10,8 @@ export declare class ClassicDriver implements SolvableDriver {
      *
      */
     validate(toSolve: string): boolean;
+    /**
+     * Check for potential conflicts in given sudoku
+     */
+    private hasConflicts;
 }
