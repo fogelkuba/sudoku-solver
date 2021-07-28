@@ -1,12 +1,12 @@
 import { AbstractDriver } from "./abstract";
 import { SolvableDriver } from "../contracts";
 
-export class ClassicDriver extends AbstractDriver implements SolvableDriver {
+export class ClassicDriver implements SolvableDriver {
     /**
      * Return resolved sudoku as a string.
      */
-    public resolve(): string {
-        return this.toSolve
+    public resolve(toSolve: string): string {
+        return toSolve
     }
 
     /**
@@ -14,12 +14,12 @@ export class ClassicDriver extends AbstractDriver implements SolvableDriver {
      * If there are no conflicts, or number of fields is corrects
      *
      */
-    public validate(): boolean {
-        if (!this.toSolve) {
+    public validate (toSolve: string): boolean {
+        if (!toSolve) {
             return false
         }
 
-        if (this.toSolve.length !== 81) {
+        if (toSolve.length !== 81) {
             return false
         }
 

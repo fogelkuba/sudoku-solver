@@ -6,10 +6,10 @@
   "types": "lib/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "coverage": "jest --config jestconfig.json --coverage",
+    "coverage": "jest --config \"./jestconfig.json\" --coverage",
     "lint": "ts lint --project \"./tsconfig.json\"",
     "test": "jest --config jestconfig.json",
-    "watch-test": "jest --config jestconfig.json --watch"
+    "watch-test": "jest --config \"./jestconfig.json\" --watch"
   },
   "repository": {
     "type": "git",

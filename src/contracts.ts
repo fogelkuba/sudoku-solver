@@ -1,10 +1,12 @@
 export interface ISolver {
-    // trim(toTrim: string): string
+    resolve(toSolve: string): string
+    setDriver(type: SolvableType): SolvableDriver
+    validate(toSolve: string): boolean
 }
 
 export interface SolvableDriver {
-    resolve(): string
-    validate(): boolean
+    resolve(toSolve: string): string
+    validate(toSolve: string): boolean
 }
 
 export enum SolvableType {

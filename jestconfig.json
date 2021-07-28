@@ -1,5 +1,5 @@
 {
-  "coverageDirectory": "../coverage",
+  "coverageDirectory": "./coverage",
   "rootDir": ".",
   "roots": [
     "<rootDir>"
