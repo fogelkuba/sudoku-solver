@@ -1,8 +1,11 @@
 export interface ISolver {
+    resolve(toSolve: string): string;
+    setDriver(type: SolvableType): SolvableDriver;
+    validate(toSolve: string): boolean;
 }
 export interface SolvableDriver {
-    resolve(): string;
-    validate(): boolean;
+    resolve(toSolve: string): string;
+    validate(toSolve: string): boolean;
 }
 export declare enum SolvableType {
     Classic = "classic"
