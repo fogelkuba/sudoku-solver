@@ -10,8 +10,7 @@ export class ClassicDriver implements SolvableDriver {
 
     /**
      * Check if sudoku is resolvable.
-     * If there are no conflicts, or number of fields is corrects
-     *
+     * If there are no conflicts, or number of fields is correct.
      */
     public validate (toSolve: string): boolean {
         if (!toSolve) {
