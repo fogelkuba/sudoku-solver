@@ -1,4 +1,3 @@
-import { AbstractDriver } from "./abstract";
 import { SolvableDriver } from "../contracts";
 
 export class ClassicDriver implements SolvableDriver {
