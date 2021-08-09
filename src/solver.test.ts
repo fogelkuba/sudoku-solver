@@ -55,7 +55,7 @@ describe('Tests for solver class', () => {
      * Tests for [validate] method.
      */
 
-    test.only('Expect [validate] method to return true when proper sudoku is provided', () => {
+    test('Expect [validate] method to return true when proper sudoku is provided', () => {
         const solver = new Solver(validSudoku)
 
         const result = solver.validate()

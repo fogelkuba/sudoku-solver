@@ -22,8 +22,6 @@ export class ClassicDriver implements SolvableDriver {
         }
 
         if (this.hasConflicts(toSolve)) {
-            console.log('has conflict');
-
             return false
         }
 
@@ -44,12 +42,41 @@ export class ClassicDriver implements SolvableDriver {
             horizontal.push(toCheck.slice(start, end))
         }
 
+        let horozontalDuplicates = this.hasGroupDuplicates(horizontal)
 
-        let horozontalDuplicates = horizontal.reduce((result, current, index) => {
+        if (horozontalDuplicates) {
+            return true
+        }
+
+        const vertical: string[][] = [
+            [],[],[],
+            [],[],[],
+            [],[],[],
+        ]
+
+        toCheck.forEach((value, index) => {
+            const group = index % 9
+            vertical[group].push(value)
+        });
+
+        let verticalDuplicates = this.hasGroupDuplicates(vertical)
+
+        if (verticalDuplicates) {
+            return true
+        }
+
+        return false
+    }
+
+    /**
+     * Check for duplicates in group
+     * @param line
+     */
+    private hasGroupDuplicates(line: any[]): boolean {
+        return line.reduce((result, current, index) => {
+            // @ts-ignore
             const values = current.filter(v => !Number.isNaN(parseInt(v)))
-            const filtered = [new Set(values)]
-
-            console.log(values, filtered);
+            const filtered = [...new Set(values)]
 
             if (values.length !== filtered.length) {
                 return true
@@ -57,12 +84,6 @@ export class ClassicDriver implements SolvableDriver {
 
             return false
         }, false)
-
-        if (horozontalDuplicates) {
-            return true
-        }
-
-        return false
     }
 }
 
