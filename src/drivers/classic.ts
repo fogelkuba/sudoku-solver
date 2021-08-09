@@ -75,17 +75,22 @@ export class ClassicDriver implements SolvableDriver {
      * @param line
      */
     private hasGroupDuplicates(line: string[][]): boolean {
+        let result = false
         // @ts-ignore
-        return line.reduce((result, current) => {
-            const values = current.filter(v => !Number.isNaN(parseInt(v)))
+        line.forEach((value) => {
+            // @ts-ignore
+            const values = value.filter(v => !Number.isNaN(parseInt(v)))
             const filtered = [...new Set(values)]
 
+            // console.log(values, filtered);
+
             if (values.length !== filtered.length) {
-                return true
+                result = true
             }
 
-            return false
-        }, false)
+        })
+
+        return result
     }
 }
 

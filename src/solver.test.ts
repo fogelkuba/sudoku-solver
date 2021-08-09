@@ -29,6 +29,20 @@ describe('Tests for solver class', () => {
         -75 -83 -8-
         `
 
+    const verticalDuplicatedSudoku = `
+        9-- 45- 18-
+        92- -1- ---
+        9-- 39- ---
+
+        -19 --- 64-
+        --- --- ---
+        -43 --- 51-
+
+        --- -46 ---
+        --- -2- -67
+        -75 -83 ---
+        `
+
     const notCompleteSudoku = `
         --- 45- 18-
         92- -1- ---
@@ -65,6 +79,14 @@ describe('Tests for solver class', () => {
 
     test('Expect [validate] method to return false when no sudoku is provided', () => {
         const solver = new Solver('')
+
+        const result = solver.validate()
+
+        expect(result).toBe(false)
+    })
+
+    test('Expect [validate] method to return false when duplicated sudoku is provided', () => {
+        const solver = new Solver(verticalDuplicatedSudoku)
 
         const result = solver.validate()
 
