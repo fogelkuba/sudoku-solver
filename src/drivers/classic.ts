@@ -65,6 +65,8 @@ export class ClassicDriver implements SolvableDriver {
             return true
         }
 
+        // check for square duplicates
+
         return false
     }
 
@@ -72,9 +74,9 @@ export class ClassicDriver implements SolvableDriver {
      * Check for duplicates in group
      * @param line
      */
-    private hasGroupDuplicates(line: any[]): boolean {
-        return line.reduce((result, current, index) => {
-            // @ts-ignore
+    private hasGroupDuplicates(line: string[][]): boolean {
+        // @ts-ignore
+        return line.reduce((result, current) => {
             const values = current.filter(v => !Number.isNaN(parseInt(v)))
             const filtered = [...new Set(values)]
 
